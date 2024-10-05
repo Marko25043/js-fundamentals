@@ -1,0 +1,29 @@
+1.Kreiranje reposa 
+2.preuzimanje - git clone "linkdoreposa"
+3.otvaranje foldera - cd naziv
+Naredbe:
+git diff - promjene 
+git status - sve odradene promjene
+Lokalna promjena: git commit -a -m "opis neki"
+git log - pregled commitova
+git push - slanje lokalnog na github
+
+js-fundamentals
+git init - inicijaliziranje projekta 
+
+
+Ako radimo prvo lokalno pa pushamo na github:
+git init
+git add . 
+git commit -a -m "Poruka"
+git log
+git remote add origin putanja_do_githuba
+git branch -M main
+git push -u origin main -> slanje sa lokalnog na github
+
+Ako je error onda
+git pull origin main --allow-unrelated-histories
+jer se spajaju dva reposa koja nemaju zajednicku povijest
+
+
+git push --set-upstream origin main -> kod prvog pusha -> main je glavna grana 
