@@ -1,4 +1,4 @@
-1.Kreiranje reposa 
+Kreiranje reposa 
 2.preuzimanje - git clone "linkdoreposa"
 3.otvaranje foldera - cd naziv
 Naredbe:
@@ -7,8 +7,6 @@ git status - sve odradene promjene
 Lokalna promjena: git commit -a -m "opis neki"
 git log - pregled commitova
 git push - slanje lokalnog na github
-
-js-fundamentals
 git init - inicijaliziranje projekta 
 
 
