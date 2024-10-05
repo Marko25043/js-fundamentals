@@ -1,0 +1,170 @@
+Metoda:
+----------------------
+NazivKlase.prototype.nazivMetode = function(){}
+
+---------------------------
+
+Prototipno nasljedivanje
+....................................................
+Klasa 2 nasljeduje od Klasa1
+-------------------------------
+function Klasa2(arg1,arg2){
+	Klasa1.call(this.arg1);
+	this.arg2 = arg2;
+}
+
+Klasa2.prototype = Object.create(Klasa1.prototype)
+Klasa2.prototype.constructor = Klasa2
+
+Klase i nasljedivanje
+--------------------------------------------------------------------
+klasa A i B , B nasljeduje A 
+
+class A{
+    constructor(arg1,arg2){
+        this.arg1 = arg1;
+        this.arg2 = arg2;
+    }
+    nazivMetode1 (){
+        console.log()
+    }
+}
+
+class B extends A{
+    constructor(arg1, arg2, arg3){
+        super(arg1, arg2);
+        this.arg3 = arg3;
+    }
+    //Nasljedivanje metoda i modifikacija
+    nazivMetode(){
+        super.nazivMetode1()
+        console.log()
+    }
+}
+-----------------------------------------------------------------
+DOM
+-----------------------------------------------------------------
+btnChange.addEventListener('click',()=>{
+    document.body.style.backgroundColor = "red";
+});
+const all_paragraph = document.querySelectorAll('p');
+
+all_paragraph.forEach((p)=>{
+    p.style.fontSize ='12px'
+})
+Kreiranje elemenata tipa : li
+  const li = document.createElement('li');
+Promjena teksta : li.textContent ='tekst';
+Dodavanje u listu - ul ili ol
+list.append(li)
+-------------------------------------------------------------------
+PROMISE
+-------------------------------------------------------------------
+Kasnjenje sa callback fjom
+-------------------------------------------------------------------
+const sumaDvaBroja=(a,b,ispis)=>{
+    let rez = a+b;
+    setTimeout(()=>{
+            ispis(rez)
+    }, 3000);
+}
+
+const ispis=(rez)=>{
+    console.log('rezultat je ',rez)
+}
+sumaDvaBroja(10,20,ispis)
+-------------------------------------------------------------------
+Promise - resolve reject
+-------------------------------------------------------------------
+function NazivFje(arg1,arg2){
+    return new Promise((resolve,reject)=>{});
+}
+NazivFje.resolve(()=>{}).catch((error)=>{})
+----------------------------------------------------------------------
+ASYNC I AWAIT -  asinkrona funkcija sluzi za vracanje Promise ,await se koristi kod asinkrone funkcije
+Asinkrona funkcija nam omogucava da pisemo asinkroni kod al kao da je sinkron 
+Primjer: ako imamo 2 funkcije sa 2 promise ,unutar async mozemo definirat redoslijed izvrsavanja funckija
+
+const print1=()=>{
+     return new Promise((resolve)=>{
+          resolve('print1')
+     });
+};
+const print2=()=>{
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            resolve('print2')
+        },4000)
+         
+    });
+};
+
+async function redoslijed(){
+    try{
+        const p2 = await print2()
+        console.log(p2)
+        const p1 = await print1()
+        console.log(p1)
+
+    } catch(error){
+        console.log(error)
+    }
+}
+redoslijed()
+//prvo ce se cekat 4s pa ce se ispisat print2 pa onda print1
+---------------------------------------------------------------------
+Primjer2 : provjera broja
+
+function checkNumber(num){
+    return new Promise((resolve,reject)=>{
+         if(num > 0){
+            resolve('broj je veci od 0');
+         }
+         else{
+            reject('broj je manji od 0');
+         }
+    });
+}
+async function print(num){
+     try{
+        const p = await checkNumber(num)
+        console.log(p) 
+     }catch(error){
+        console.log(error)
+     }
+}
+print(-10)
+
+//Primjer3
+let takeOrder=()=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(console.log('Dobar dan sto zelite naruciti'))
+        },7000);
+    });
+}
+async function kitchen(){
+    console.log('jelo1 se kuva')
+    console.log('jelo2 se pece')
+    await takeOrder()
+    console.log('kuhar primio narudzbu vratio se nazad')
+    console.log('isjeci povrce')
+    console.log('stavit kuhat manistru')
+
+}
+kitchen()
+console.log('cistac cisti restoran')
+
+
+
+
+
+
+
+
+
+
+
+
+
+

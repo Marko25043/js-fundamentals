@@ -1,0 +1,141 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: gray;
+    
+}
+li,h1,a,button{
+    font-family: 'Roboto',sans-serif;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+header{
+    background-color: rgb(5, 0, 0);
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.logo{
+    margin-right: auto;
+}
+.nav_menu{
+    list-style: none;
+}
+.nav_menu li{
+    display:inline-block ;
+    padding:20px;
+}
+.nav_menu li {
+    transition:all 0.3s ease 0s;  
+    border-bottom: 2px solid red;    
+    margin-right: 10px;
+
+}
+.nav_menu li:hover{
+    color: aqua;
+}
+button{
+    padding: 10px 25px;
+    background-color: rgb(1, 61, 61);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+    
+
+}
+button:hover{
+    border: 1px solid #830520;
+    color:red;
+    background-color: transparent;
+}
+.text {
+    font-size: 30px;
+    color: red;
+    margin: 20px;
+}
+.change_text:hover{
+    background-color: rgb(4, 77, 77);
+}
+.btn-click{
+    padding: 10px 25px;
+    margin-top: 20px;
+    
+    background-color: rgb(1, 61, 61);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.btn-click:hover{
+    border: 1px solid #830520;
+    color:red;
+    background-color: rgb(1, 61, 61);
+}
+.change-color{
+    background-color: blue;
+    color: white;
+}
+.container{
+    display: flex;
+    width: 400px;
+    margin: 20px;
+    padding: 20px;
+    
+}
+#res{
+    font-size: 29px;
+    padding: 20px;
+    color: white;
+    font-weight: 800;
+}
+.container input{
+    height: 30px;
+    padding: 20px;
+    font-size: 2em;
+}
+.person{
+    margin-left: 30px;
+    font-size: 20px;
+}
+.parent{
+    background-color: rgb(32, 2, 2);
+    height: 200px;
+    width: 200px;
+    margin:30px;
+    position: relative;
+}
+.child{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    background-color: aqua;
+    top: 20%;
+    left: 20%;
+}
+.child h1{
+    cursor: pointer;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+.input-text{
+    margin: auto;
+    display: block;
+    padding: 1rem;
+    font-size: 1.4rem;
+}
+form p{
+    margin:2rem;
+    font-size: 2rem;
+}
